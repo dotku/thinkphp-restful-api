@@ -8,6 +8,20 @@
   
 谢谢  
 
+## 使用方法
+
+/api/{$tablename}/{$id}
+
+JavaScript 例子
+
+```javascript
+$.ajax({
+    method: "POST",
+    data: {"article":"文章内容"},
+    success: function(rsp){ console.log(rsp)}
+})
+```
+
 ## 联系作者
 
 邮箱 weijingjaylin@gmail.com
