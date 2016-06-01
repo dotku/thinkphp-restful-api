@@ -21,7 +21,37 @@ $.ajax({
     method: "POST",
     data: {"title": "标题", "article":"文章内容"},
     success: function(rsp){ console.log(rsp)}
-})
+});
+
+/* 删除数据表 cart 中的物品 */
+$.ajax({
+    url: "/api/cart",
+    method: "DELETE",
+    data: {"cart_id": "123", "goods_id":"goods_123"},
+    success: function(rsp){ console.log(rsp)}
+});
+
+/* 修改数据表 user 中的 nickname */
+$.ajax({
+    url: "/api/user",
+    method: "PUT",
+    data: {"user_id": "123", "nickname":"新的昵称"},
+    success: function(rsp){ console.log(rsp)}
+});
+
+/* 通过 data 以 快递号(shiping_ref) 作为参考，查询数据表 shipping 中的数据 */
+$.ajax({
+    url: "/api/shipping",
+    method: "GET",
+    data: {"shiping_ref": "sr123456"},
+    success: function(rsp){ console.log(rsp)}
+});
+
+/* 通过 url 以 物品编号(goods_id) 作为参考，查询数据表 goods 中的数据 */
+$.ajax({
+    url: "/api/goods/123",
+    success: function(rsp){ console.log(rsp)}
+});
 ```
 
 ## 联系作者

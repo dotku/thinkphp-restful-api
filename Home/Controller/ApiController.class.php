@@ -36,10 +36,20 @@ class ApiController extends Controller {
         $model = D($_GET['table']);
         intval($_GET['limit']) ? $limit = $_GET['limit'] : $limit = 30;
         $list = $model->order('createTime desc')->limit($limit)->select();
+
+        // 通过 URL 中的 id 来查找
         if ($_GET['id']) {
             $map[$_GET['table']."_id"] = $_GET['id'];
             $this->output['info'] = $model->where($map)->find();
         }
+        
+        // 通过 body data 中的数据来查找
+        $input = json_decode(file_get_contents("php://input"), true);
+        $info = $model->where($input)->select();
+        if ($info) {
+            $this->output['info'] = $info;
+        }
+
         if (!empty($list)){
 
             $this->output['list'] = $list;
