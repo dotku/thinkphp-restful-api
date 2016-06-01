@@ -19,7 +19,7 @@ JavaScript 例子
 $.ajax({
     url: "/api/news",
     method: "POST",
-    data: {"title": "标题", article":"文章内容"},
+    data: {"title": "标题", "article":"文章内容"},
     success: function(rsp){ console.log(rsp)}
 })
 ```
