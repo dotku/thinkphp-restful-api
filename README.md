@@ -17,7 +17,7 @@ JavaScript 例子
 ```javascript
 /* 添加文章到数据表 news */
 $.ajax({
-    url: "/api/news"
+    url: "/api/news",
     method: "POST",
     data: {"title": "标题", article":"文章内容"},
     success: function(rsp){ console.log(rsp)}
