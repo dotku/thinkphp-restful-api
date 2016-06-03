@@ -39,11 +39,25 @@ $.ajax({
     success: function(rsp){ console.log(rsp)}
 });
 
-/* 通过 data 以 快递号(shiping_ref) 作为参考，查询数据表 shipping 中的数据 */
+/* 以 快递号(shiping_ref) 作为参考，查询数据表 shipping 中的数据 */
 $.ajax({
     url: "/api/shipping",
     method: "GET",
     data: {"shiping_ref": "sr123456"},
+    success: function(rsp){ console.log(rsp)}
+});
+
+/* 获取查询数据表 news 中最多 100 (默认) 条的数据 */
+$.ajax({
+    url: "/api/news",
+    method: "GET",
+    success: function(rsp){ console.log(rsp)}
+});
+
+/* 获取查询数据表 news 中最多 200 条的数据 */
+$.ajax({
+    url: "/api/news?limit=200",
+    method: "GET",
     success: function(rsp){ console.log(rsp)}
 });
 
