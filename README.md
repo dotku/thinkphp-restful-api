@@ -67,6 +67,9 @@ $.ajax({
     success: function(rsp){ console.log(rsp)}
 });
 ```
+## 赞助作者
+
+[Patron](https://www.patreon.com/bePatron?u=29160414)
 
 ## 联系作者
 
